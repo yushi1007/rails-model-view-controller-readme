@@ -2,7 +2,6 @@
 
 ## Objectives
 
-- Define the responsibilities of models, views, and controllers in web applications
 - Describe where MVC goes in a Rails application structure
 - Follow an http request from browser to router to controller to model to view to response to browser
 
@@ -13,6 +12,8 @@ Use a kitchen metaphor to describe MVC:
 Model is the chef
 Controller is the waiter
 View is the table (or the saucier if you will, the person that does the plating)
+
+^ We use that metaphor when describing MVC in Sinatra. Quick reminder on MVC.
 
 Introduce the concept of Model View Controller from a rails perspective.
 
