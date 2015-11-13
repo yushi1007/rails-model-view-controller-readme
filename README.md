@@ -6,9 +6,6 @@
 - Describe where MVC goes in a Rails application structure
 - Follow an http request from browser to router to controller to model to view to response to browser
 
-define the responsibilities of models, views, and controllers
-know where mvc goes in a rails application structure
-follow a http request from browser to router to controller to model to view to response to browser
 
 ## Notes
 
