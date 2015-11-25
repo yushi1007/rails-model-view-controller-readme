@@ -36,13 +36,13 @@ Rails was created with the concept of convention over configuration and this hol
 * A ```views/``` directory that will contain a corresponding view for each of the pages that the end user will access. For a CRUD based model, a few of the standard views would include: an index view to show all records, a show page that shows a specific record, and then new and edit pages that both render a form.
 
 ## Request Flow
-![MVC Request Flow](http://reif.io/lib/flatiron/mvc-flow.jpg)
+![MVC Request Flow](https://s3.amazonaws.com/flatiron-bucket/readme-lessons/mvc_flow_updated.png)
 
 ## Roles and Responsibilities
 
 ### Models
 
-At the end of the day the model file is a Ruby class. If it has a corresponding database table it will inherit from the ActiveRecord::Base class, which means that it has access to a number of methods that assist in working with the database. However, you can treat it like a regular Ruby class, allowing you to create methods, data attributes, and everything else that you would want to do in a class file. In a typical model file you will find: custom database query scopes, default settings for database columns, validations, model-to-model relationships, callbacks, and custom algorithms related to that model.
+At the end of the day the model file is a Ruby class. If it has a corresponding database table it will inherit from the `ActiveRecord::Base` class, which means that it has access to a number of methods that assist in working with the database. However, you can treat it like a regular Ruby class, allowing you to create methods, data attributes, and everything else that you would want to do in a class file. In a typical model file you will find your application's domain logic, extending the restaurant analogy the chef (your mode) performs a number of tasks to create each meal that the waiter (controller) and especially the table (views) don't know anything about. Some of this domain logic would include items such as complex database queries, data relationships and custom algorithms.
 
 It is important to remember to follow the single responsibility principle for your model class files. If any of the methods that you place in the model file perform tasks outside the scope of that specific model, they should probably be moved to their own class.
 
@@ -52,9 +52,8 @@ As mentioned before, the controller is like the waiter in a restaurant. The cont
 
 * The view looks to the controller and only has access to the instance variables that the controller makes available. Those instance variables will contain any/all data coming in from the database.
 * The routes file looks to the controller and ensures that the methods in the controller match the items in the routes file.
-* The controller methods also handle the redirect logic for the application, for example, when a new record is created, the controller dictates where the user should be redirected after the new entry is successfully added to the database, along with what confirmation message is sent to the user.
 
-The controllers can also help to protect against security issues, in Rails 4+ the controller forces all attributes submitted through forms to be declared as a strong parameter.
+Remembering our restaurant analogy, the easiest way to think of the controller is that it manages data flow between the router, model, and views, in the same way that a waiter takes the order from a patron, relays the order details to the chef, and brings the meal out to the table.
 
 ### Views
 
@@ -64,12 +63,12 @@ Rails also does a great job of supplying built in ActionView helper methods that
 
 ```ERB
 <%= div_for(@post, class: "post-index-page") do %>
-  <p><strong><%= @post.title %></strong> <%= @post.summary %></p>
+  <p><%= @post.title %> <%= @post.summary %></p>
 <% end %>
 ```
 Which is translated to the following HTML markup:
 
-```
+```html
 <div id="post_42" class="post post-index-page">
   <p><strong>My Amazing Blog Post</strong> With an incredible summary</p>
 </div>
