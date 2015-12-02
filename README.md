@@ -21,3 +21,5 @@ Diagram a request flow, from browser, to http request, to router, to controller,
 
 Describe the responsibilities of the different kinds of code you write, what goes where, data code, model logic, controller rendering/redirect logic, view / presentation logic, routing, even actionview helpers. A quick example would be helpful. 
 
+
+<a href='https://learn.co/lessons/rails-model-view-controller-readme' data-visibility='hidden'>View this lesson on Learn.co</a>
