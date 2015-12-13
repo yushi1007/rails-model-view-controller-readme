@@ -70,7 +70,7 @@ Which is translated to the following HTML markup:
 
 ```html
 <div id="post_42" class="post post-index-page">
-  <p><strong>My Amazing Blog Post</strong> With an incredible summary</p>
+  <p>My Amazing Blog Post</strong> With an incredible summary</p>
 </div>
 ```
 Notice how the Action View helper enabled us to dynamically set the HTML tags without having to write any HTML code at all? You will discover that this is a very helpful tool as your views grow in size, the more Ruby you can write and the less HTML the cleaner your views will be, which results in them being easier to manage and scale.
