@@ -61,7 +61,7 @@ In a Rails application, the view files should contain the least amount of logic 
 
 Rails also does a great job of supplying built in ActionView helper methods that you can implement to efficiently code the views. For example, if you wanted to create a ```div``` for a set of blog posts that you want to iterate over, you can implement the following code:
 
-```ERB
+```erb
 <%= div_for(@post, class: "post-index-page") do %>
   <p><%= @post.title %> <%= @post.summary %></p>
 <% end %>
