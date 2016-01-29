@@ -76,3 +76,5 @@ Which is translated to the following HTML markup:
 ```
 
 Notice how the Action View helper enabled us to dynamically set the HTML tags without having to write any HTML code at all? You will discover that this is a very helpful tool as your views grow in size, the more Ruby you can write and the less HTML the cleaner your views will be, which results in them being easier to manage and scale.
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-model-view-controller-readme' title='Rails Model View Controller'>Rails Model View Controller</a> on Learn.co and start learning to code for free.</p>
