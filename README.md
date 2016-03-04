@@ -42,7 +42,7 @@ Rails was created with the concept of convention over configuration and this hol
 
 ### Models
 
-At the end of the day the model file is a Ruby class. If it has a corresponding database table it will inherit from the `ActiveRecord::Base` class, which means that it has access to a number of methods that assist in working with the database. However, you can treat it like a regular Ruby class, allowing you to create methods, data attributes, and everything else that you would want to do in a class file. In a typical model file you will find your application's domain logic, extending the restaurant analogy the chef (your mode) performs a number of tasks to create each meal that the waiter (controller) and especially the table (views) don't know anything about. Some of this domain logic would include items such as complex database queries, data relationships and custom algorithms.
+At the end of the day the model file is a Ruby class. If it has a corresponding database table it will inherit from the `ActiveRecord::Base` class, which means that it has access to a number of methods that assist in working with the database. However, you can treat it like a regular Ruby class, allowing you to create methods, data attributes, and everything else that you would want to do in a class file. In a typical model file you will find your application's domain logic, extending the restaurant analogy the chef (your model) performs a number of tasks to create each meal that the waiter (controller) and especially the table (views) don't know anything about. Some of this domain logic would include items such as complex database queries, data relationships and custom algorithms.
 
 It is important to remember to follow the single responsibility principle for your model class files. If any of the methods that you place in the model file perform tasks outside the scope of that specific model, they should probably be moved to their own class.
 
@@ -71,10 +71,12 @@ Which is translated to the following HTML markup:
 
 ```html
 <div id="post_42" class="post post-index-page">
-  <p>My Amazing Blog Post</strong> With an incredible summary</p>
+  <p><strong>My Amazing Blog Post</strong> With an incredible summary</p>
 </div>
 ```
 
 Notice how the Action View helper enabled us to dynamically set the HTML tags without having to write any HTML code at all? You will discover that this is a very helpful tool as your views grow in size, the more Ruby you can write and the less HTML the cleaner your views will be, which results in them being easier to manage and scale.
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-model-view-controller-readme' title='Rails Model View Controller'>Rails Model View Controller</a> on Learn.co and start learning to code for free.</p>
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-model-view-controller-readme'>Rails MVC</a> on Learn.co and start learning to code for free.</p>
