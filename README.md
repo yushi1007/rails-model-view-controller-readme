@@ -71,7 +71,7 @@ Which is translated to the following HTML markup:
 
 ```html
 <div id="post_42" class="post post-index-page">
-  <p>My Amazing Blog Post</strong> With an incredible summary</p>
+  <p><strong>My Amazing Blog Post</strong> With an incredible summary</p>
 </div>
 ```
 
