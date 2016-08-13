@@ -27,13 +27,13 @@ Using this as an analogy, we can assign the following roles to each of our resta
 
 ## Routing, File Naming Conventions, and Data Flow
 
-Rails was created with the concept of convention over configuration and this holds true for how the MVC structure was setup. View files correspond directly to controller files, which speak directly with models. As an example, imagine that you have a blog that has a database table called ```posts```. You will have the following set of files:
+Rails was created with the concept of convention over configuration and this holds true for how the MVC structure was setup. View files correspond directly to controller files, which speak directly with models. As an example, imagine that you have a blog that has a database table called `posts`. You will have the following set of files:
 
-* A ```post.rb``` model file that will contain: validations, database relationships, callbacks, and any custom logic for posts.
+* A `post.rb` model file that will contain: validations, database relationships, callbacks, and any custom logic for posts.
 
-* A ```posts_controller.rb``` file that will have methods that will manage data flow for the Post behavior, this will include the full set of CRUD features, the standard methods are: index, new, create, show, edit, update, and destroy.
+* A `posts_controller.rb` file that will have methods to manage data flow for the Post behavior, including the full set of CRUD features. The standard methods are: `index`, `new`, `create`, `show`, `edit`, `update`, and `destroy`.
 
-* A ```views/``` directory that will contain a corresponding view for each of the pages that the end user will access. For a CRUD based model, a few of the standard views would include: an index view to show all records, a show page that shows a specific record, and then new and edit pages that both render a form.
+* A `views/` directory that will contain a corresponding view for each of the pages that the end user will access. For a CRUD based model, a few of the standard views would include: an `index` view to show all records, a `show` page that shows a specific record, and then `new` and `edit` pages that each render a form.
 
 ## Request Flow
 ![MVC Request Flow](https://s3.amazonaws.com/flatiron-bucket/readme-lessons/mvc_flow_updated.png)
@@ -42,14 +42,13 @@ Rails was created with the concept of convention over configuration and this hol
 
 ### Models
 
-At the end of the day the model file is a Ruby class. If it has a corresponding database table it will inherit from the `ActiveRecord::Base` class, which means that it has access to a number of methods that assist in working with the database. However, you can treat it like a regular Ruby class, allowing you to create methods, data attributes, and everything else that you would want to do in a class file. In a typical model file you will find your application's domain logic, extending the restaurant analogy the chef (your model) performs a number of tasks to create each meal that the waiter (controller) and especially the table (views) don't know anything about. Some of this domain logic would include items such as complex database queries, data relationships and custom algorithms.
+At the end of the day, the model file is a Ruby class. If it has a corresponding database table, it will inherit from the `ActiveRecord::Base` class, which means that it can access a number of methods that assist in working with the database. However, you can treat it like a regular Ruby class, allowing you to create methods, data attributes, and everything else that you would want to do in a class file. In a typical model file you will find your application's domain logic. To extend the restaurant analogy, the chef (your model) performs a number of tasks to create each meal that the waiter (controller) and especially the table (views) don't know anything about. Some of this domain logic would include items such as complex database queries, data relationships, and custom algorithms.
 
 It is important to remember to follow the single responsibility principle for your model class files. If any of the methods that you place in the model file perform tasks outside the scope of that specific model, they should probably be moved to their own class.
 
 ### Controllers
 
-As mentioned before, the controller is like the waiter in a restaurant. The controllers connect the models, views, and routes. To make the process more straightforward, think in terms of the following process:
-
+As mentioned before, the controller is like the waiter in a restaurant. The controllers connect the models, views, and routes. To make it even more straightforward, think in terms of the following process:
 * The view looks to the controller and only has access to the instance variables that the controller makes available. Those instance variables will contain any/all data coming in from the database.
 * The routes file looks to the controller and ensures that the methods in the controller match the items in the routes file.
 
@@ -59,7 +58,7 @@ Remembering our restaurant analogy, the easiest way to think of the controller i
 
 In a Rails application, the view files should contain the least amount of logic of any of the files in the model-view-controller architecture. The role of the view is to simply render whatever it is sent from the database.
 
-Rails also does a great job of supplying built in ActionView helper methods that you can implement to efficiently code the views. For example, if you wanted to create a ```div``` for a set of blog posts that you want to iterate over, you can implement the following code:
+Rails also does a great job of supplying built in ActionView helper methods that you can implement to efficiently code the views. For example, if you wanted to create a `div` for a set of blog posts that you want to iterate over, you can implement the following code:
 
 ```erb
 <%= div_for(@post, class: "post-index-page") do %>
@@ -75,8 +74,6 @@ Which is translated to the following HTML markup:
 </div>
 ```
 
-Notice how the Action View helper enabled us to dynamically set the HTML tags without having to write any HTML code at all? You will discover that this is a very helpful tool as your views grow in size, the more Ruby you can write and the less HTML the cleaner your views will be, which results in them being easier to manage and scale.
+Notice how the Action View helper enabled us to dynamically set the HTML tags without having to write any HTML code at all? You will discover that this is a very helpful tool as your views grow in size. The more Ruby and the less HTML you write, the cleaner your views will be, resulting in them being easier to manage and scale.
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-model-view-controller-readme' title='Rails Model View Controller'>Rails Model View Controller</a> on Learn.co and start learning to code for free.</p>
-
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-model-view-controller-readme'>Rails MVC</a> on Learn.co and start learning to code for free.</p>
