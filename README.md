@@ -49,7 +49,9 @@ It is important to remember to follow the single responsibility principle for yo
 ### Controllers
 
 As mentioned before, the controller is like the waiter in a restaurant. The controllers connect the models, views, and routes. To make it even more straightforward, think in terms of the following process:
+
 * The view looks to the controller and only has access to the instance variables that the controller makes available. Those instance variables will contain any/all data coming in from the database.
+
 * The routes file looks to the controller and ensures that the methods in the controller match the items in the routes file.
 
 Remembering our restaurant analogy, the easiest way to think of the controller is that it manages data flow between the router, model, and views, in the same way that a waiter takes the order from a patron, relays the order details to the chef, and brings the meal out to the table.
